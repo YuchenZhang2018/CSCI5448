@@ -1,8 +1,19 @@
 package com.zhang.ecommerce.strategy;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Component;
+
 import com.zhang.ecommerce.Order;
 
-public class DollarOffStrategy extends DiscountStrategy{	
+@Component
+public class DollarOffStrategy extends DiscountStrategy{
+	
+	@PostConstruct
+	public void init() {
+		StrategyFactory.registerStrategy(this);
+	}
+	
 	@Override
 	public double computeDiscount(Order order) {
         double total = order.getTotalCost();

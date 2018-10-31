@@ -3,6 +3,9 @@ package com.zhang.ecommerce.strategy;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StrategyFactory {
 	private static Map<StrategyType,DiscountStrategy> strategyMap;
 	
@@ -10,7 +13,7 @@ public class StrategyFactory {
 		strategyMap = new HashMap<>();
 	}
 
-	public void registerStrategy(DiscountStrategy strategy) {
+	public static void registerStrategy(DiscountStrategy strategy) {
 		strategyMap.put(strategy.strategyType, strategy);
 	}
 	public static DiscountStrategy getStrategy(StrategyType type) {

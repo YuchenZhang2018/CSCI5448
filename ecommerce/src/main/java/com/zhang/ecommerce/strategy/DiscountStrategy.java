@@ -2,8 +2,11 @@ package com.zhang.ecommerce.strategy;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.zhang.ecommerce.Order;
 
+@Component
 public abstract class DiscountStrategy {
 	protected StrategyType  strategyType;
 	public List<String> getStrategyParams() {
