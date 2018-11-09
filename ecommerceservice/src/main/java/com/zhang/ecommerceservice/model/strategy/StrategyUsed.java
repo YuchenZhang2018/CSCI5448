@@ -1,4 +1,4 @@
-package com.zhang.ecommerce.strategy;
+package com.zhang.ecommerceservice.model.strategy;
 
 public class StrategyUsed {
 	private static StrategyUsed instance;

@@ -1,10 +1,10 @@
-package com.zhang.ecommerce.strategy;
+package com.zhang.ecommerceservice.model.strategy;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
-import com.zhang.ecommerce.Order;
+import com.zhang.ecommerceservice.model.common.Order;
 
 @Component
 public class PercentOffStrategy extends DiscountStrategy{

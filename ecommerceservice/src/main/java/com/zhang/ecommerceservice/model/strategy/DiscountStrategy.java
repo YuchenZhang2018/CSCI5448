@@ -1,10 +1,11 @@
-package com.zhang.ecommerce.strategy;
+package com.zhang.ecommerceservice.model.strategy;
 
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.zhang.ecommerce.Order;
+import com.zhang.ecommerceservice.model.common.Order;
+
 
 @Component
 public abstract class DiscountStrategy {

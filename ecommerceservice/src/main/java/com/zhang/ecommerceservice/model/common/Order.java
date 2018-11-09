@@ -1,4 +1,4 @@
-package com.zhang.ecommerce;
+package com.zhang.ecommerceservice.model.common;
 
 import java.util.List;
 
