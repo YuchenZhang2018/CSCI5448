@@ -12,19 +12,43 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <hibernate.version>4.3.5.Final</hibernate.version>
+    <org.springframework-version>4.3.1.RELEASE</org.springframework-version>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
   <dependencies>
   <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>4.3.0.RELEASE</version>
+      <version>${org.springframework-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>4.3.0.RELEASE</version>
+      <version>${org.springframework-version}</version>
     </dependency>
+    <dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-webmvc</artifactId>
+	  <version>${org.springframework-version}</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-tx</artifactId>
+	  <version>${org.springframework-version}</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-core</artifactId>
+	  <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-entitymanager</artifactId>
+	  <version>${hibernate.version}</version>
+	</dependency>
     <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>javax.annotation-api</artifactId>
