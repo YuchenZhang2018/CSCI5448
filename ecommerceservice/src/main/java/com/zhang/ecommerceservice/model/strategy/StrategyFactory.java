@@ -1,4 +1,4 @@
-package com.zhang.ecommerce.strategy;
+package com.zhang.ecommerceservice.model.strategy;
 
 import java.util.HashMap;
 import java.util.Map;
