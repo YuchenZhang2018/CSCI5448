@@ -1,5 +1,6 @@
 package com.zhang.ecommerceservice.model.strategy;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class StrategyFactory {
 	private static Map<StrategyType,DiscountStrategy> strategyMap;
 	
 	public StrategyFactory() {
-		strategyMap = new HashMap<>();
+		strategyMap = new HashMap<StrategyType, DiscountStrategy>();
 	}
 
 	public static void registerStrategy(DiscountStrategy strategy) {
