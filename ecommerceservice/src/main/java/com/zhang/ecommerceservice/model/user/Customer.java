@@ -1,9 +1,12 @@
-package com.zhang.ecommerce.user;
+package com.zhang.ecommerceservice.model.user;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zhang.ecommerce.*;
+import com.zhang.ecommerceservice.model.common.*;
+
+
+
 
 public class Customer {
 	private String name;
@@ -13,6 +16,22 @@ public class Customer {
 	private Cart cart;
 	private String id;
 	private PaymentInfo paymentInfo;
+	public PaymentInfo getPaymentInfo() {
+		return paymentInfo;
+	}
+
+	public void setPaymentInfo(PaymentInfo paymentInfo) {
+		this.paymentInfo = paymentInfo;
+	}
+
+	public String getPassport() {
+		return passport;
+	}
+
+	public void setPassport(String passport) {
+		this.passport = passport;
+	}
+
 	private String passport;
 	
 	public Customer() {

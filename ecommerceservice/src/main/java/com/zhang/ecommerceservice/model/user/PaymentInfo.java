@@ -1,4 +1,4 @@
-package com.zhang.ecommerce.user;
+package com.zhang.ecommerceservice.model.user;
 
 public class PaymentInfo {
 	private String payMethod;

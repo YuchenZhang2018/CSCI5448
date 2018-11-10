@@ -1,11 +1,13 @@
-package com.zhang.ecommerce.user;
+package com.zhang.ecommerceservice.model.user;
 
 import java.util.List;
 
-import com.zhang.ecommerce.strategy.DiscountStrategy;
-import com.zhang.ecommerce.strategy.StrategyFactory;
-import com.zhang.ecommerce.strategy.StrategyType;
-import com.zhang.ecommerce.strategy.StrategyUsed;
+import com.zhang.ecommerceservice.model.strategy.DiscountStrategy;
+import com.zhang.ecommerceservice.model.strategy.StrategyFactory;
+import com.zhang.ecommerceservice.model.strategy.StrategyType;
+import com.zhang.ecommerceservice.model.strategy.StrategyUsed;
+
+
 
 public class Admin {
 	private String adminId;

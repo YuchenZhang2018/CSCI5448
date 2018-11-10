@@ -1,17 +1,19 @@
-package com.zhang.ecommerce.user;
+package com.zhang.ecommerceservice.model.user;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zhang.ecommerce.Product;
+import com.zhang.ecommerceservice.model.common.Product;
+
+
 
 
 public class Cart {
-	private int itemNum;
+	
 	private List<Product> productList;
+	private String id;
 	
 	public Cart() {
-		itemNum=0;
 		productList = new ArrayList<Product>();
 	}
 	
@@ -24,24 +26,24 @@ public class Cart {
 	}
 	
 	public void addItem(Product product) {
-		if(productList.add(product)) {
-			itemNum+=1;
-		}
+		
 	}
 	
 	public void deleteItem(Product product) {
-		if(productList.remove(product)) {
-			itemNum-=1;
-		}
+		
 	}
 	
 
-	public int getItemNum() {
-		return itemNum;
+	public void setItemNum (int itemnum) {
+		
 	}
+	
 	
 	public List<Product> getProductList(){
 		return productList;
+	}
+	public String getId() {
+		return id;
 	}
 
 }
