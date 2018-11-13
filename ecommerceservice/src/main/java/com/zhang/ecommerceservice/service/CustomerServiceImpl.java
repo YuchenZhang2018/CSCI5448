@@ -70,11 +70,7 @@ public class CustomerServiceImpl implements CustomerService{
     	Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
 		session.save(c.getCart());
-//        // 将数据添加到数据库
-//        session.save(customer);
-        // 提交事务
         ts.commit();
-        // 关闭对应的连接
         session.close();
         return c.getCart();
 	}
@@ -85,11 +81,7 @@ public class CustomerServiceImpl implements CustomerService{
 		Transaction ts = session.beginTransaction();
 		c.getCart().deleteItem(product);
 		session.save(c.getCart());
-//        // 将数据添加到数据库
-//        session.save(customer);
-        // 提交事务
         ts.commit();
-        // 关闭对应的连接
         session.close();
         return c.getCart();
 	}

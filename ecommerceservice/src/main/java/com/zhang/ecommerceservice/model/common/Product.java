@@ -1,8 +1,9 @@
 package com.zhang.ecommerceservice.model.common;
 
+import java.util.UUID;
 
 public class Product {
-	
+	private String id;
 	private String productName;
 	private String category;
 	private String brand;
@@ -10,15 +11,22 @@ public class Product {
 	private String info;
 	
 	public Product() {
-		super();
+		id = UUID.randomUUID().toString();
+
 	}
-	public Product(String productName, String category, String brand, double price, String info) {
-		super();
+	public Product(String id,String productName, String category, String brand, double price, String info) {
+		this.id = UUID.randomUUID().toString();
 		this.productName = productName;
 		this.category = category;
 		this.brand = brand;
 		this.price = price;
 		this.info = info;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getProductName() {
 		return productName;
