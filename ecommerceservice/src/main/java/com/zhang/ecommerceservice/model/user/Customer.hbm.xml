@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2018, 7:59:50 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zhang.ecommerceservice.model.user.Customer" table="CUSTOMER" dynamic-update="true">
+        <id name="id" type="java.lang.String" access="field">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="name" type="java.lang.String" column="NAME" ></property>
+        <component name="address" class="com.zhang.ecommerceservice.model.user.Address">
+				<property name="addressLine" type="string" column="ADDRESSLINE"></property>
+        		<property name="city" type="string" column="CITY"></property>
+        		<property name="state" type="string" column="STATE"></property>
+        		<property name="zip" type="string" column="ZIP"></property>
+        </component>
+        <property name="phone" type="java.lang.String" column="PHONE"></property>
+        <property name="email" type="java.lang.String" column="EMAIL"></property>
+        <many-to-one name="cart" class="com.zhang.ecommerceservice.model.user.Cart" access="field" fetch="join">
+            <column name="CART" />
+        </many-to-one>
+        <component name="paymentInfo" class="com.zhang.ecommerceservice.model.user.PaymentInfo">
+        		<property name="payMethod" type="java.lang.String" column="PAYMETHOD"></property>
+        		<property name="accountInfo" type="java.lang.String" column="ACCOUNTINFO"></property>
+        </component>
+        <property name="passport" type="java.lang.String" access="field" column="PASSPORT"></property>
+    </class>
+</hibernate-mapping>

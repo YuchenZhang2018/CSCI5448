@@ -3,8 +3,9 @@ package com.zhang.ecommerceservice.model.user;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zhang.ecommerceservice.model.common.*;
+import org.springframework.stereotype.Component;
 
+import com.zhang.ecommerceservice.model.common.*;
 
 
 
@@ -49,41 +50,7 @@ public class Customer {
 		id = "randID";
 	}
 	
-	public List<Product> searchProducts(ProductSearchFilter filter){
-		List<Product> searchResult = new ArrayList<Product>();
-		//to do search
-		return searchResult;
-	}
-
-	public Cart addProduct2Cart(List<Product> products) {
-		for(Product product:products) {
-			cart.addItem(product);
-		}
-		return cart;
-	}
-	public Cart deleteProductFromCart(Product product) {
-		if(cart.getProductList().contains(product)) {
-			cart.deleteItem(product);
-		}
-		return cart;
-	}
-	public boolean login(String passport) {
-		//check from datebase
-		return true;
-	}
-	public boolean logout() {
-		//to do
-		return true;
-	}
 	
-	public boolean returnProducts(Order order) {
-		//to do return
-		return true;
-	}
-	public boolean checkOut() {
-		//to do
-		return true;
-	}
 	
 	public String getName() {
 		return name;

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 10, 2018, 2:02:55 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zhang.ecommerceservice.model.common.Product" table="PRODUCT">
+        <id name="productName" type="java.lang.String">
+            <column name="PRODUCTNAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="category" type="java.lang.String">
+            <column name="CATEGORY" />
+        </property>
+        <property name="brand" type="java.lang.String">
+            <column name="BRAND" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="info" type="java.lang.String">
+            <column name="INFO" />
+        </property>
+    </class>
+</hibernate-mapping>
