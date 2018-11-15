@@ -1,0 +1,3 @@
+1. Name: Yuchen Zhang2. Title: E-Commerce Service3. Project Summary: An e-commerce service website that can allow customer to search, purchase and return products. What’s more, it allows administrator to add products and refund customer. Also, Storage administrator can check product storage and package orders. Deliveryman can deliver orders.4. Video Link(Jing):  
+
+                      https://screencast.com/t/nUj047WAPij5. Todo: Using Observer Design pattern to implements the code of processing orders. Using MVC framework to finish finish other front-end work. 
