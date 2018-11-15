@@ -15,11 +15,9 @@ public class CartDao implements ICartDao{
 	public boolean saveCustomer(Cart cart) {
 		Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
-        // 将数据添加到数据库
         session.save(cart);
-        // 提交事务
         ts.commit();
-        // 关闭对应的连接
+
         session.close();
         return true;
 	}
