@@ -12,7 +12,7 @@ import com.ecommerceservice.model.user.Customer;
 
 @Component
 public class CartDao implements ICartDao{
-	public boolean saveCustomer(Cart cart) {
+	public boolean saveCart(Cart cart) {
 		Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
         session.save(cart);

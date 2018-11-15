@@ -8,7 +8,7 @@ import com.ecommerceservice.dao.ICustomerDao;
 import com.ecommerceservice.model.user.Customer;
 
 @Service
-public class AdminCustomerImpl implements AdminService{
+public class AdminServiceImpl implements AdminService{
 
 	
 	private ICustomerDao customerDao = new CustomerDao(); 
