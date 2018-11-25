@@ -11,10 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerceservice.model.user.Admin;
 import com.ecommerceservice.model.user.Customer;
 import com.ecommerceservice.model.user.RoleModel;
+import com.ecommerceservice.model.user.StorageAdmin;
+import com.ecommerceservice.service.AdminService;
+import com.ecommerceservice.service.AdminServiceImpl;
 import com.ecommerceservice.service.CustomerService;
 import com.ecommerceservice.service.CustomerServiceImpl;
+import com.ecommerceservice.service.StorageAdminService;
+import com.ecommerceservice.service.StorageAdminServiceImpl;
 
 
 @Controller
@@ -22,7 +28,9 @@ import com.ecommerceservice.service.CustomerServiceImpl;
 public class WelcomeController {
 //	@Autowired
 	private CustomerService customerService = new CustomerServiceImpl();
-
+	private StorageAdminService stgAdminService = new StorageAdminServiceImpl();
+	private AdminService adminService = new AdminServiceImpl();
+	
     @RequestMapping( "/")
 	public String welcome(Model model) {
 		return "index";
@@ -32,13 +40,22 @@ public class WelcomeController {
 	public String chooseRoleandOperation(@ModelAttribute RoleModel role) {
 		String roleStr= role.getRole();
 		if("customer".equals(role.getRole())) {
-//		    System.out.printf("user: {}  password: {}",role.getUserName(),role.getPassport());;
-//			customerService.login(role.getUserName(), null, null, role.getPassport());
-//			return"redirect:/customerPage";
 			if("signup".equals(role.getOperation())) {
 				return "customerSignup";
 			}
 			return "customerSignin";
+		}
+		if("admin".equals(role.getRole())) {
+			if("signup".equals(role.getOperation())) {
+				return "adminSignup";
+			}
+			return "adminSignin";
+		}
+		if("storageAdmin".equals(role.getRole())) {
+			if("signup".equals(role.getOperation())) {
+				return "storageAdminSignup";
+			}
+			return "storageAdminSignin";
 		}
 		
 			
@@ -64,7 +81,27 @@ public class WelcomeController {
 		customerService.login(customer.getName(), null, null, customer.getPassport());
 		return "customerWelcome";
 	}
-//	public static void main(String[] args) throws Exception {
-//		SpringApplication.run(WelcomeController.class, args);
-//	}
+	@RequestMapping("/storageAdmin/signup")
+	public String storageAdminSignup(@ModelAttribute StorageAdmin stgAdmin) {
+		stgAdminService.signup(stgAdmin);
+		return "customerWelcome";
+	}
+	
+	@RequestMapping("/storageAdmin/signin")
+	public String storageAdminSignin(@ModelAttribute StorageAdmin stgAdmin) {
+		stgAdminService.signin(stgAdmin);
+		return "customerWelcome";
+	}
+	@RequestMapping("/admin/signup")
+	public String adminSignup(@ModelAttribute Admin admin) {
+		adminService.signup(admin);
+		return "customerWelcome";
+	}
+	
+	@RequestMapping("/admin/signin")
+	public String adminSignin(@ModelAttribute Admin admin) {
+		adminService.signin(admin);
+		return "customerWelcome";
+	}
+
 }

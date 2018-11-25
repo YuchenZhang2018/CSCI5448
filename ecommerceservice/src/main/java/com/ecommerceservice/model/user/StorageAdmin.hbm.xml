@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 19, 2018, 1:23:45 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Nov 23, 2018, 8:30:01 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.ecommerceservice.model.user.Admin" table="ADMIN">
-        <id name="adminId" type="java.lang.String">
-            <column name="ADMINID" />
+    <class name="com.ecommerceservice.model.user.StorageAdmin" table="STORAGEADMIN">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
             <generator class="uuid" />
         </id>
         <property name="name" type="java.lang.String">
             <column name="NAME" />
         </property>
-        <property name="phone" type="java.lang.String" access="field">
-            <column name="PHONE" />
-        </property>
         <property name="password" type="java.lang.String" access="field">
             <column name="PASSWORD" />
+        </property>
+        <property name="phone" type="java.lang.String" access="field">
+            <column name="PHONE" />
         </property>
     </class>
 </hibernate-mapping>

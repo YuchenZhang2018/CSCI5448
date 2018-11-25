@@ -59,7 +59,9 @@ public class CustomerDao implements ICustomerDao{
 	public Customer getCustomerById(String id) {
 		Session session = HibernateUtils.openSession();
 		Transaction tx = session.beginTransaction();
-		return (Customer) session.get(Customer.class, id);
+		Customer c= (Customer) session.get(Customer.class, id);
+		session.close();
+		return c;
 	}
 	@Override
 	public void updateCustomer(Customer customer) {

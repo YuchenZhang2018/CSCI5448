@@ -12,18 +12,34 @@ import com.ecommerceservice.strategy.StrategyUsed;
 public class Admin {
 	private String adminId;
 	private String name;
+	private String phone;
+	private String password;
 	public void setDiscountStrategy(StrategyType type, List<String> params) {
 		DiscountStrategy strategy = StrategyFactory.getStrategy(type);
 		strategy.setStrategyParams(params);
 		StrategyUsed.setStrategyUsed(strategy);
 	}
 	public Admin() {
-		super();
 	}
-	public Admin(String adminId, String name) {
+	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Admin(String adminId, String name, String phone, String password) {
 		super();
 		this.adminId = adminId;
 		this.name = name;
+		this.phone = phone;
+		this.password = password;
 	}
 	public String getAdminId() {
 		return adminId;

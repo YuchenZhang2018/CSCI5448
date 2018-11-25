@@ -5,10 +5,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.ecommerceservice.model.common.Product;
+import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.user.Address;
+import com.ecommerceservice.model.user.Admin;
 import com.ecommerceservice.model.user.Cart;
 import com.ecommerceservice.model.user.Customer;
 import com.ecommerceservice.model.user.PaymentInfo;
+import com.ecommerceservice.model.user.StorageAdmin;
 
 
 @SuppressWarnings("deprecation")
@@ -24,6 +27,8 @@ public class HibernateUtils {
         configuration.addClass(Customer.class);
         configuration.addClass(Cart.class);
         configuration.addClass(Product.class);
+        configuration.addClass(Admin.class);
+        configuration.addClass(StorageAdmin.class);
         
         sessionFactory = configuration.buildSessionFactory();
     }

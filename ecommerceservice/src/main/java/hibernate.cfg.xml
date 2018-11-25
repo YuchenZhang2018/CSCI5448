@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">test1234_</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ooadprojDB</property>
+  <!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property> -->
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <!-- 指定连接池中的最大连接数 -->
+  <property name="hibernate.c3p0.max_size">20</property>
+  <!-- 指定连接池中最小连接数 -->
+  <property name="hibernate.c3p0.min_size">1</property>
+  <!-- 指定连接池中连接的超时时长 -->
+  <property name="hibernate.c3p0.timeout">5000</property>
+  <!-- 指定连接池里最大缓存多少个Statement对象 -->
+  <property name="hibernate.c3p0.max_statements">100</property>
+  <!-- 设置：根据需要自动创建（更新）数据库表 -->
+  <property name="hbm2ddl.auto">update</property>
+  <!-- 显示Hibernate持久化操作所生成的SQL -->
+  <property name="show_sql">true</property>
+  <!-- 将SQL脚本进行格式化后再输出 -->
+  <property name="hibernate.format_sql">true</property>
+  <!-- 罗列所有持久化类的类名 ，在这里就是我们的entity-->
+  <property name="current_session_context_class">thread</property>
+  <!-- 设置连接数据库的编码格式 -->
+  <property name="connection.characterEncoding">utf8</property>
+  <!-- 注意：mapping要放在property之后 -->
+  <mapping class="com.ecommerceservice.model.user.Customer"/>
+  <mapping class="com.ecommerceservice.model.user.Cart"/>
+  <mapping class="com.ecommerceservice.model.common.Product"/>
+  <mapping class="com.ecommerceservice.model.common.Storage" resource="com/ecommerceservice/model/common/Storage.hbm.xml"/>
+  <mapping class="com.ecommerceservice.model.user.Admin"/>
+  <mapping class="com.ecommerceservice.model.user.StorageAdmin"/>
+ </session-factory>
+</hibernate-configuration>
