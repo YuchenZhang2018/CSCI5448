@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 10, 2018, 12:28:06 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Nov 26, 2018, 1:24:10 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.ecommerceservice.model.common.Order" table="ORDER">
         <id name="orderID" type="java.lang.String">
             <column name="ORDERID" />
-            <generator class="assigned" />
+            <generator class="uuid" />
         </id>
-        <list name="productList" inverse="false" table="PRODUCT" lazy="true">
+        <list name="productList" inverse="false" table="STORAGE" lazy="true">
             <key>
                 <column name="ORDERID" />
             </key>
             <list-index></list-index>
-            <one-to-many class="com.ecommerceservice.model.common.Product" />
+            <one-to-many class="com.ecommerceservice.model.common.Storage" />
         </list>
         <property name="customerID" type="java.lang.String">
             <column name="CUSTOMERID" />

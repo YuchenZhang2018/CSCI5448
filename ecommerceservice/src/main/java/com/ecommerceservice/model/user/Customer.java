@@ -17,6 +17,10 @@ public class Customer {
 	private Cart cart;
 	private String id;
 	private PaymentInfo paymentInfo;
+	private boolean storageState;
+	private boolean paymentState;
+	private boolean addressState;
+	private List<Checker> checkers = new ArrayList<Checker>();
 	public PaymentInfo getPaymentInfo() {
 		return paymentInfo;
 	}
@@ -48,10 +52,37 @@ public class Customer {
 		this.email = email;
 		cart = new Cart();
 		id = "randID";
+		storageState=false;
+		paymentState = false;
+		addressState = false;
 	}
 	
 	
 	
+	public boolean isStorageState() {
+		return storageState;
+	}
+
+	public void setStorageState(boolean storageState) {
+		this.storageState = storageState;
+	}
+
+	public boolean isPaymentState() {
+		return paymentState;
+	}
+
+	public void setPaymentState(boolean paymentState) {
+		this.paymentState = paymentState;
+	}
+
+	public boolean isAddressState() {
+		return addressState;
+	}
+
+	public void setAddressState(boolean addressState) {
+		this.addressState = addressState;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -90,5 +121,18 @@ public class Customer {
 
 	public String getId() {
 		return id;
+	}
+	public void attach(Checker checker) {
+		checkers.add(checker);
+	}
+	public Order checkout() {
+		for(Checker checker: checkers) {
+			checker.checkoutCheck();
+		}
+		if(storageState && paymentState && addressState) {
+			Order order = new Order(cart.getStorageList(),id,null,null);
+			return order;
+		}
+		return null;
 	}
 }

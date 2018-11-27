@@ -3,14 +3,14 @@ package com.ecommerceservice.model.common;
 import java.util.List;
 
 public class Order {
-	private List<Product> productList;
+	private List<Storage> productList;
 	private String customerID;
 	private String state;
 	private String orderID;
 	public Order() {
 		super();
 	}
-	public Order(List<Product> productList, String customerID, String state, String orderID) {
+	public Order(List<Storage> productList, String customerID, String state, String orderID) {
 		super();
 		this.productList = productList;
 		this.customerID = customerID;
@@ -19,15 +19,15 @@ public class Order {
 	}
 	public double getTotalCost() {
 		double total = 0.0;
-		for(Product product:productList) {
+		for(Storage product:productList) {
 			total += product.getPrice();
 		}
 		return total;
 	}
-	public List<Product> getProductList() {
+	public List<Storage> getProductList() {
 		return productList;
 	}
-	public void setProductList(List<Product> productList) {
+	public void setProductList(List<Storage> productList) {
 		this.productList = productList;
 	}
 	public String getCustomerID() {

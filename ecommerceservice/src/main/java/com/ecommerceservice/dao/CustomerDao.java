@@ -33,7 +33,7 @@ public class CustomerDao implements ICustomerDao{
 		Session session = HibernateUtils.openSession();
 		Transaction tx = session.beginTransaction();
 		
-		String hql = "select distinct c from Customer c where 1=1 ";
+		String hql = "select distinct c from Customer c where 1=1";
 		List<String> filterValues = new ArrayList<String>();
 		
 		for(String name :filterMap.keySet()) {

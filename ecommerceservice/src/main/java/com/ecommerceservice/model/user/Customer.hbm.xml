@@ -24,6 +24,10 @@
         		<property name="payMethod" type="java.lang.String" column="PAYMETHOD"></property>
         		<property name="accountInfo" type="java.lang.String" column="ACCOUNTINFO"></property>
         </component>
-        <property name="passport" type="java.lang.String" access="field" column="PASSPORT"></property>
+        <property name="passport" type="string" access="field" column="PASSPORT"></property>
+        <property name="storageState" type="boolean" access="field" column="STORAGESTATE"></property>
+        <property name="paymentState" type="boolean" access="field" column="PAYMENTINFOSTATE"></property>
+        <property name="addressState" type="boolean" access="field" column="ADDRESSSTATE"></property>
+        
     </class>
 </hibernate-mapping>

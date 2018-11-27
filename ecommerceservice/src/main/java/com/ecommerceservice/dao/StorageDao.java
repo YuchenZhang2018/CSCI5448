@@ -1,5 +1,7 @@
 package com.ecommerceservice.dao;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -9,13 +11,14 @@ import org.springframework.stereotype.Component;
 
 import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.Storage;
+import com.ecommerceservice.model.user.Customer;
 
 @Component
 public class StorageDao implements IStorageDao{
 
 	@Override
 	public void addStorage(Storage storage) {
-		Storage queryRst=getStorage(storage.getProduct());
+		Storage queryRst=getStorage(storage.getProductName());
 		Session session = HibernateUtils.openSession();
 		session.beginTransaction();
 		
@@ -31,7 +34,7 @@ public class StorageDao implements IStorageDao{
 
 	@Override
 	public boolean delStorage(Storage storage) {
-		Storage queryRst=getStorage(storage.getProduct());
+		Storage queryRst=getStorage(storage.getProductName());
 		Session session = HibernateUtils.openSession();
 		session.beginTransaction();
 		if(null==queryRst || queryRst.getNum()<storage.getNum()) {
@@ -45,13 +48,12 @@ public class StorageDao implements IStorageDao{
 	}
 
 	@Override
-	public Storage getStorage(Product product) {
+	public Storage getStorage(String productName) {
 		Session session = HibernateUtils.openSession();
 		session.beginTransaction();
-		String hql="from Storage s where PRODUCTNAME=? and BRAND=?";
+		String hql="from Storage s where PRODUCTNAME=? ";
 		Query query = session.createQuery(hql);
-		query.setParameter(0, product.getProductName());
-		query.setParameter(1, product.getBrand());
+		query.setParameter(0, productName);
 		List rstlist = query.list();
 		if(rstlist.isEmpty()) {
 			return null;
@@ -60,6 +62,23 @@ public class StorageDao implements IStorageDao{
 		session.close();
 		return rst;
 		
+	}
+
+	@Override
+	public List<Storage> getAllStorage() {
+		Session session = HibernateUtils.openSession();
+		session.beginTransaction();
+		String hql="from Storage s where 1=1";
+		Query query = session.createQuery(hql);
+		List rstlist = query.list();
+		if(rstlist.isEmpty()) {
+			return null;
+		}
+		List<Storage> storageList = new ArrayList<Storage>();
+		for (Iterator iterator = rstlist.iterator();iterator.hasNext();) {
+			storageList.add((Storage) iterator.next());
+		}
+		return storageList;
 	}
 	
 	

@@ -4,16 +4,37 @@ import java.util.UUID;
 
 public class Storage {
 	private String id;
-	private Product product;
+	private String productName;
 	private double num;
+	private double price;
 	public Storage() {
 		id = UUID.randomUUID().toString();
 	}
-	public Storage(String id,Product product, double num) {
-		this.id=UUID.randomUUID().toString();
-		this.product = product;
-		this.num = num;
+	
+	public double getPrice() {
+		return price;
 	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public Storage(String id, String productName, double num, double price) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.num = num;
+		this.price = price;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -21,12 +42,7 @@ public class Storage {
 		this.id = id;
 	}
 	
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
-	}
+	
 	public double getNum() {
 		return num;
 	}

@@ -13,9 +13,15 @@ import org.springframework.stereotype.Service;
 import com.ecommerceservice.dao.CustomerDao;
 import com.ecommerceservice.dao.HibernateUtils;
 import com.ecommerceservice.dao.ICustomerDao;
+import com.ecommerceservice.dao.IProductDao;
+import com.ecommerceservice.dao.IStorageDao;
+import com.ecommerceservice.dao.ProductDao;
+import com.ecommerceservice.dao.StorageDao;
 import com.ecommerceservice.model.common.Order;
 import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.ProductSearchFilter;
+import com.ecommerceservice.model.common.Storage;
+import com.ecommerceservice.model.common.StorageChecker;
 import com.ecommerceservice.model.user.Cart;
 import com.ecommerceservice.model.user.Customer;
 
@@ -23,6 +29,7 @@ import com.ecommerceservice.model.user.Customer;
 public class CustomerServiceImpl implements CustomerService{
 	
 	private ICustomerDao customerDao = new CustomerDao();
+	private IProductDao productDao = new ProductDao();
 
 	@Override
 	public void signup(Customer c) {
@@ -63,26 +70,29 @@ public class CustomerServiceImpl implements CustomerService{
 		return searchResult;
 	}
 	@Override
-	public Cart addProduct2Cart(String customerId,List<Product> products) {
+	public Cart addProduct2Cart(String customerId,List<Storage> products) {
     	Customer c = customerDao.getCustomerById(customerId);
     	
-    	for(Product product:products) {
+    	for(Storage product:products) {
 			c.getCart().addItem(product);
 		}
     	Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
-		session.save(c.getCart());
+		session.update(c.getCart());
         ts.commit();
         session.close();
         return c.getCart();
 	}
     @Override
-	public Cart deleteProductFromCart(String customerId, Product product) {
+	public Cart deleteProductFromCart(String customerId, List<Storage> product) {
     	Customer c = customerDao.getCustomerById(customerId);
     	Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
-		c.getCart().deleteItem(product);
-		session.save(c.getCart());
+		for(Storage cur: product) {
+			c.getCart().deleteItem(cur);
+		}
+		
+		session.update(c.getCart());
         ts.commit();
         session.close();
         return c.getCart();
@@ -91,17 +101,33 @@ public class CustomerServiceImpl implements CustomerService{
     
 	
 	public boolean logout() {
-		//to do
+		// TODO Auto-generated method stub
 		return true;
 	}
 	
 	public boolean returnProducts(Order order) {
-		//to do return
+		// TODO Auto-generated method stub
 		return true;
 	}
-	public boolean checkOut() {
-		//to do
-		return true;
+
+
+	@Override
+	public List<Product> searchProductInStorage(Map<String, String> searchfilter) {
+		return productDao.searchProduct(searchfilter);
+	}
+
+	@Override
+	public Order checkout(String customerId) {
+		Customer c = customerDao.getCustomerById(customerId);
+    	new StorageChecker(c);
+    	Order order = c.checkout();
+		return order;
+	}
+
+	@Override
+	public Customer getCustomerById(String customerId) {
+	
+		return customerDao.getCustomerById(customerId);
 	}
 
 

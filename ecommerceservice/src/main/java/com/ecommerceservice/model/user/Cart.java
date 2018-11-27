@@ -4,44 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ecommerceservice.model.common.Product;
+import com.ecommerceservice.model.common.Storage;
 
 
 
 
 public class Cart {
 	
-	private List<Product> productList;
+	private List<Storage> storageList;
 	private String id;
 	
 	public Cart() {
-		productList = new ArrayList<Product>();
+		storageList = new ArrayList<Storage>();
 	}
 	
 	public double getTotalPrice() {
 		double totalPrice = 0.0;
-		for(Product product:productList) {
+		for(Storage product:storageList) {
 			totalPrice += product.getPrice();
 		}
 		return totalPrice;
 	}
 	
-	public void addItem(Product product) {
-		
+	public void addItem(Storage storage) {
+		storageList.add(storage);
 	}
 	
-	public void deleteItem(Product product) {
-		
+	public void deleteItem(Storage storage) {
+		storageList.remove(storage);
 	}
 	
+	
+	public List<Storage> getStorageList() {
+		return storageList;
+	}
 
-	public void setItemNum (int itemnum) {
-		
-	}
-	
-	
-	public List<Product> getProductList(){
-		return productList;
-	}
 	public String getId() {
 		return id;
 	}

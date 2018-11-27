@@ -4,27 +4,35 @@ public class ProductSearchFilter {
 	private String brand;
 	private String categary;
 	private String productName;
+	public ProductSearchFilter(String brand, String categary, String productName) {
+		super();
+		this.brand = brand;
+		this.categary = categary;
+		this.productName = productName;
+	}
+	public ProductSearchFilter() {
+		super();
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public String getCategary() {
+		return categary;
+	}
+	public void setCategary(String categary) {
+		this.categary = categary;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 	
 	
-//	public static class Builder() {
-//		private ProductSearchFilter filter;
-//		public Builder setBrand(String brand ) {
-//			this.filter.brand= brand;
-//			return this;
-//		}
-//		public Builder setCategary(String categary) {
-//			this.filter.categary = categary;
-//			return this;
-//		}
-//		public Builder setProductNmae(String productName) {
-//			this.filter.productName = productName;
-//			return this;
-//		}
-//		public ProductSearchFilter build() {
-//			return new ProductSearchFlter();
-//		}
-//	}
-//	
 	
 
 }

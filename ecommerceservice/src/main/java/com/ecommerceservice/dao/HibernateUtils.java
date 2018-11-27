@@ -29,6 +29,7 @@ public class HibernateUtils {
         configuration.addClass(Product.class);
         configuration.addClass(Admin.class);
         configuration.addClass(StorageAdmin.class);
+        configuration.addClass(Storage.class);
         
         sessionFactory = configuration.buildSessionFactory();
     }

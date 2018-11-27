@@ -1,5 +1,7 @@
 package com.ecommerceservice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,21 @@ public class StorageServiceImpl implements StorageService{
 	public void delStorage(Storage storage) {
 		storageDao.delStorage(storage);
 		
+	}
+
+	@Override
+	public boolean checkStorage(Storage storage) {
+		Storage rst = storageDao.getStorage(storage.getProductName());
+		if(rst==null || rst.getNum()<storage.getNum()){
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public List<Storage> showAllStorage() {
+		
+		return storageDao.getAllStorage();
 	}
 	
 
