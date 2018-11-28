@@ -11,10 +11,10 @@ import com.ecommerceservice.model.common.Storage;
 
 
 
-
+@Component
 public class DollarOffStrategy extends DiscountStrategy{
 	
-
+    @PostConstruct
 	public void init() {
 		StrategyFactory.registerStrategy(this);
 	}

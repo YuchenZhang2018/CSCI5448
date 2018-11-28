@@ -1,5 +1,8 @@
 package com.ecommerceservice.strategy;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StrategyUsed {
 	private static StrategyUsed instance;
 	private static DiscountStrategy strategyUsed;

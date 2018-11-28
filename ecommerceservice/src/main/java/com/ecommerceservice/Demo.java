@@ -20,6 +20,8 @@ import com.ecommerceservice.strategy.DiscountStrategy;
 import com.ecommerceservice.strategy.DollarOffStrategy;
 import com.ecommerceservice.strategy.NonStrategy;
 import com.ecommerceservice.strategy.PercentOffStrategy;
+import com.ecommerceservice.strategy.StrategyFactory;
+import com.ecommerceservice.strategy.StrategyType;
 import com.ecommerceservice.strategy.StrategyUsed;
 
 public class Demo {
@@ -45,14 +47,15 @@ public class Demo {
 	        storageAdmin.addStorage(productstr);	        
 		}
 		
+		adminPrepare();
 		System.out.println("Are you admin? Y/N");
 		Scanner sad = new Scanner(System.in);
 		if("Y".equals(sad.next())) {
 			System.out.println("Please choose today's discount strategy: 1. DollarOffStrategy 2. PercentOff Strategy 3. none discount strategy");
 			Scanner strategyTypesc = new Scanner(System.in);
-			String StrategyType = strategyTypesc.next();
+			String strategyTp = strategyTypesc.next();
 			DiscountStrategy strategy;
-			if("1".equals(StrategyType) || "2".equals(StrategyType)) {
+			if("1".equals(strategyTp) || "2".equals(strategyTp)) {
 				System.out.println("please input params in format 'param1 param2'");
 				Scanner paramsc = new Scanner(System.in);
 				String[] param = paramsc.nextLine().split(":");
@@ -61,15 +64,18 @@ public class Demo {
 					paramlist.add(i);
 				}
 				
-				if("1".equals(StrategyType)) {
-					strategy = new DollarOffStrategy(); 
+				if("1".equals(strategyTp)) {
+					strategy = StrategyFactory.getStrategy(StrategyType.DollarOff);
+//					strategy = new DollarOffStrategy(); 
 					strategy.setStrategyParams(paramlist);
 				}else {
-					strategy = new PercentOffStrategy();
+					strategy = StrategyFactory.getStrategy(StrategyType.PercentOff);
+//					strategy = new PercentOffStrategy();
 					strategy.setStrategyParams(paramlist);
 				}	
 			}else {
-				strategy = new NonStrategy();
+				strategy = StrategyFactory.getStrategy(StrategyType.Non);
+//				strategy = new NonStrategy();
 			}
 			StrategyUsed.setStrategyUsed(strategy);
 		}
@@ -170,8 +176,13 @@ public class Demo {
 		}
 		return storageChoose;
 	}
-	private static void adminDemo() {
-		
+	private static void adminPrepare() {
+		DollarOffStrategy strategy1 = new DollarOffStrategy();
+		strategy1.init();
+		PercentOffStrategy strategy2 = new PercentOffStrategy();
+		strategy2.init();
+		NonStrategy strategy3 = new NonStrategy();
+		strategy3.init();
 	}
 	
 }

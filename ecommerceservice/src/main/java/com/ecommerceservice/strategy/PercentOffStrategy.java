@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 import com.ecommerceservice.model.common.OrderModel;
 import com.ecommerceservice.model.common.Storage;
 
-
+@Component
 public class PercentOffStrategy extends DiscountStrategy{
 	
 
-
+	@PostConstruct
 	public void init() {
 		StrategyFactory.registerStrategy(this);
 	}

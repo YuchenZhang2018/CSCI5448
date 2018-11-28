@@ -8,7 +8,7 @@ import com.ecommerceservice.model.common.OrderModel;
 import com.ecommerceservice.model.common.Storage;
 
 
-
+@Component
 public abstract class DiscountStrategy {
 	protected StrategyType  strategyType;
 	protected List<String> strategyParams;
