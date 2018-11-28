@@ -54,11 +54,12 @@ public class CustomerDaoTest {
 //		Customer rst = dao.getCustomer(filterMap);
 //		Assert.assertEquals( customer.getEmail(),rst.getEmail());
 //		dao.deleteCustomer(rst);
-//		Customer final_rst = dao.getCustomerById(rst.getId());
-//		Assert.assertNull(final_rst);
+////		Customer final_rst = dao.getCustomerById(rst.getId());
+////		Assert.assertNull(final_rst);
 //		
 //	}
 //	
-//	
+	
+
 
 }

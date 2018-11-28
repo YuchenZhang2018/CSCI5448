@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.ecommerceservice.model.common.*;
+import com.ecommerceservice.strategy.DiscountStrategy;
+import com.ecommerceservice.strategy.StrategyUsed;
 
 
 
@@ -118,6 +120,10 @@ public class Customer {
 	public Cart getCart() {
 		return cart;
 	}
+	
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 
 	public String getId() {
 		return id;
@@ -125,12 +131,19 @@ public class Customer {
 	public void attach(Checker checker) {
 		checkers.add(checker);
 	}
-	public Order checkout() {
+	public OrderModel checkout() {
 		for(Checker checker: checkers) {
 			checker.checkoutCheck();
 		}
 		if(storageState && paymentState && addressState) {
-			Order order = new Order(cart.getStorageList(),id,null,null);
+			DiscountStrategy discount = StrategyUsed.getInstance().getStrategyUsed();
+			double beforeDiscount = discount.countOriginalCost(cart.getStorageList());
+			double afterDiscount = discount.computeDiscount(cart.getStorageList());
+			double tax=0.0;
+			double total= afterDiscount +tax;
+			
+			OrderModel order = new OrderModel(cart.getStrageListStrFromList(cart.getStorageList()), id, null, discount.discountInfor(), total,
+					beforeDiscount-afterDiscount,tax);
 			return order;
 		}
 		return null;

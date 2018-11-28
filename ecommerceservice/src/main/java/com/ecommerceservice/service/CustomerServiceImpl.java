@@ -13,11 +13,15 @@ import org.springframework.stereotype.Service;
 import com.ecommerceservice.dao.CustomerDao;
 import com.ecommerceservice.dao.HibernateUtils;
 import com.ecommerceservice.dao.ICustomerDao;
+import com.ecommerceservice.dao.IOrderDao;
 import com.ecommerceservice.dao.IProductDao;
 import com.ecommerceservice.dao.IStorageDao;
+import com.ecommerceservice.dao.OrderDao;
 import com.ecommerceservice.dao.ProductDao;
 import com.ecommerceservice.dao.StorageDao;
-import com.ecommerceservice.model.common.Order;
+import com.ecommerceservice.model.common.AddressChecker;
+import com.ecommerceservice.model.common.OrderModel;
+import com.ecommerceservice.model.common.PaymentInfoChecker;
 import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.ProductSearchFilter;
 import com.ecommerceservice.model.common.Storage;
@@ -30,6 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	private ICustomerDao customerDao = new CustomerDao();
 	private IProductDao productDao = new ProductDao();
+	private IOrderDao orderDao = new OrderDao();
 
 	@Override
 	public void signup(Customer c) {
@@ -78,7 +83,7 @@ public class CustomerServiceImpl implements CustomerService{
 		}
     	Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
-		session.update(c.getCart());
+		session.update(c);
         ts.commit();
         session.close();
         return c.getCart();
@@ -105,7 +110,7 @@ public class CustomerServiceImpl implements CustomerService{
 		return true;
 	}
 	
-	public boolean returnProducts(Order order) {
+	public boolean returnProducts(OrderModel order) {
 		// TODO Auto-generated method stub
 		return true;
 	}
@@ -117,10 +122,13 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public Order checkout(String customerId) {
+	public OrderModel checkout(String customerId) {
 		Customer c = customerDao.getCustomerById(customerId);
     	new StorageChecker(c);
-    	Order order = c.checkout();
+    	new PaymentInfoChecker(c);
+    	new AddressChecker(c);
+    	OrderModel order = c.checkout();
+    	orderDao.saveOrder(order);
 		return order;
 	}
 

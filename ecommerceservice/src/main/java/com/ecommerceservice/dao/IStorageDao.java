@@ -2,7 +2,6 @@ package com.ecommerceservice.dao;
 
 import java.util.List;
 
-import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.Storage;
 
 public interface IStorageDao {

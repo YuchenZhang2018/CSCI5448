@@ -17,9 +17,9 @@
         </component>
         <property name="phone" type="java.lang.String" column="PHONE"></property>
         <property name="email" type="java.lang.String" column="EMAIL"></property>
-        <many-to-one name="cart" class="com.ecommerceservice.model.user.Cart" access="field" fetch="join">
-            <column name="CART" />
-        </many-to-one>
+        <component name="cart" class="com.ecommerceservice.model.user.Cart">
+            <property name="storageListStr" type="java.lang.String" column="STORAGELISTSTR"></property>
+        </component> 
         <component name="paymentInfo" class="com.ecommerceservice.model.user.PaymentInfo">
         		<property name="payMethod" type="java.lang.String" column="PAYMETHOD"></property>
         		<property name="accountInfo" type="java.lang.String" column="ACCOUNTINFO"></property>

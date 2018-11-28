@@ -16,7 +16,7 @@ public class CustomerDao implements ICustomerDao{
 	public boolean saveCustomer(Customer customer) {
 		Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
-		session.save(customer.getCart());
+//		session.save(customer.getCart());
 
         session.save(customer);
        
@@ -84,6 +84,7 @@ public class CustomerDao implements ICustomerDao{
 		past.setPassport(cur.getPassport());
 		past.setPhone(cur.getPhone());
 		past.setPaymentInfo(cur.getPaymentInfo());
+		past.getCart().setStorageList(cur.getCart().getStorageList());
 		return past;
 	}
 	@Override

@@ -5,7 +5,7 @@
  <session-factory>
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.connection.password">test1234_</property>
-  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ooadprojDB</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/projDB</property>
   <!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property> -->
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -29,10 +29,11 @@
   <property name="connection.characterEncoding">utf8</property>
   <!-- 注意：mapping要放在property之后 -->
   <mapping class="com.ecommerceservice.model.user.Customer"/>
-  <mapping class="com.ecommerceservice.model.user.Cart"/>
+  <!-- <mapping class="com.ecommerceservice.model.user.Cart"/> -->
   <mapping class="com.ecommerceservice.model.common.Product"/>
   <mapping class="com.ecommerceservice.model.common.Storage"/>
   <mapping class="com.ecommerceservice.model.user.Admin"/>
   <mapping class="com.ecommerceservice.model.user.StorageAdmin"/>
+  <mapping class="com.ecommerceservice.model.common.OrderModel"/>
  </session-factory>
 </hibernate-configuration>

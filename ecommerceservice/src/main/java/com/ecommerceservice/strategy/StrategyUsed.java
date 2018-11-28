@@ -11,6 +11,10 @@ public class StrategyUsed {
 		}
 		return instance;
 	}
+	public static DiscountStrategy getStrategyUsed() {
+		return strategyUsed;
+	}
+
 	public static synchronized void setStrategyUsed(DiscountStrategy strategy) {
 		if(instance==null) {
 			instance = new StrategyUsed();

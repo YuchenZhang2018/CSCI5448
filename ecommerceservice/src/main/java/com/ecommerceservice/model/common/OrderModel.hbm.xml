@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 27, 2018, 5:33:41 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.ecommerceservice.model.common.OrderModel" table="ORDERMODEL">
+        <id name="orderID" type="java.lang.String">
+            <column name="ORDERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="productStr" type="java.lang.String">
+            <column name="PRODUCTSTR" />
+        </property>
+        <property name="customerID" type="java.lang.String">
+            <column name="CUSTOMERID" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <property name="discountStrategyInfo" type="java.lang.String">
+            <column name="DISCOUNTSTRATEGYINFO" />
+        </property>
+        <property name="totalcost" type="double">
+            <column name="TOTALCOST" />
+        </property>
+        <property name="saving" type="double">
+            <column name="SAVING" />
+        </property>
+        <property name="tax" type="double">
+            <column name="TAX" />
+        </property>
+    </class>
+</hibernate-mapping>

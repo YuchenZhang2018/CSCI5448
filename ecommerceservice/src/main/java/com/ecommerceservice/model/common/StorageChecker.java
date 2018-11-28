@@ -28,7 +28,6 @@ public class StorageChecker extends Checker{
 			boolean state =storageService.checkStorage(storage);
 			if(state==false) {
 				customer.setStorageState(false);
-				customerDao.updateCustomer(customer);
 				break;
 			}
 		}
