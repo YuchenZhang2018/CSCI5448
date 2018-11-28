@@ -10,7 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.ecommerceservice.model.common.Product;
-import com.ecommerceservice.model.common.ProductSearchFilter;
+
 import com.ecommerceservice.model.user.Customer;
 
 public class ProductDao implements IProductDao{
