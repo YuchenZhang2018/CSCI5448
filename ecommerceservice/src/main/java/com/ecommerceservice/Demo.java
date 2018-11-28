@@ -24,12 +24,12 @@ import com.ecommerceservice.strategy.StrategyUsed;
 
 public class Demo {
 	
+	
 	private static StorageService storageSrv = new StorageServiceImpl();
 	private static CustomerService customerSrv = new CustomerServiceImpl();
 	private static StorageAdminService storageAdmin = new StorageAdminServiceImpl();
 	public static void main(String args[]) {
-		java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
-		
+//		java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.INFO);
 		
 		
 		System.out.println("Are you storage admin? Y/N ");

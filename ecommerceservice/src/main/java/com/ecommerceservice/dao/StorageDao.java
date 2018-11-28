@@ -9,7 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Component;
 
-import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.user.Customer;
 

@@ -139,7 +139,7 @@ public class Customer {
 			DiscountStrategy discount = StrategyUsed.getInstance().getStrategyUsed();
 			double beforeDiscount = discount.countOriginalCost(cart.getStorageList());
 			double afterDiscount = discount.computeDiscount(cart.getStorageList());
-			double tax=0.8 * afterDiscount;
+			double tax=0.08 * afterDiscount;
 			double total= afterDiscount +tax;
 			
 			OrderModel order = new OrderModel(cart.getStrageListStrFromList(cart.getStorageList()), id, null, discount.discountInfor(), total,

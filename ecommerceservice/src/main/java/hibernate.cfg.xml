@@ -30,7 +30,6 @@
   <!-- 注意：mapping要放在property之后 -->
   <mapping class="com.ecommerceservice.model.user.Customer"/>
   <!-- <mapping class="com.ecommerceservice.model.user.Cart"/> -->
-  <mapping class="com.ecommerceservice.model.common.Product"/>
   <mapping class="com.ecommerceservice.model.common.Storage"/>
   <mapping class="com.ecommerceservice.model.user.Admin"/>
   <mapping class="com.ecommerceservice.model.user.StorageAdmin"/>

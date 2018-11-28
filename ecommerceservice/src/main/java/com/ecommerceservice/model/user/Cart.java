@@ -3,7 +3,6 @@ package com.ecommerceservice.model.user;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.Storage;
 
 
@@ -54,8 +53,7 @@ public class Cart {
 	public String getStorageListStr() {
 		String rst = "";
 		for(Storage storage: storageList) {
-			rst+=storage.getId()+":"+storage.getProductName()+":"+
-		storage.getNum()+":"+storage.getNum()+":"+storage.getPrice()+" ";		
+			rst+=storage.getId()+":"+storage.getProductName()+":"+storage.getNum()+":"+storage.getPrice()+" ";		
 		}
 		return rst.trim();
 		 
@@ -63,8 +61,7 @@ public class Cart {
 	public void setStorageListStr() {
 		String rst = "";
 		for(Storage storage: storageList) {
-			rst+=storage.getId()+":"+storage.getProductName()+":"+
-		storage.getNum()+":"+storage.getNum()+":"+storage.getPrice()+" ";		
+			rst+=storage.getId()+":"+storage.getProductName()+":"+storage.getNum()+":"+storage.getPrice()+" ";		
 		}
 		rst.trim();
 		storageListStr = rst.trim();

@@ -14,15 +14,12 @@ import com.ecommerceservice.dao.CustomerDao;
 import com.ecommerceservice.dao.HibernateUtils;
 import com.ecommerceservice.dao.ICustomerDao;
 import com.ecommerceservice.dao.IOrderDao;
-import com.ecommerceservice.dao.IProductDao;
 import com.ecommerceservice.dao.IStorageDao;
 import com.ecommerceservice.dao.OrderDao;
-import com.ecommerceservice.dao.ProductDao;
 import com.ecommerceservice.dao.StorageDao;
 import com.ecommerceservice.model.common.AddressChecker;
 import com.ecommerceservice.model.common.OrderModel;
 import com.ecommerceservice.model.common.PaymentInfoChecker;
-import com.ecommerceservice.model.common.Product;
 import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.common.StorageChecker;
 import com.ecommerceservice.model.user.Cart;
@@ -32,8 +29,8 @@ import com.ecommerceservice.model.user.Customer;
 public class CustomerServiceImpl implements CustomerService{
 	
 	private ICustomerDao customerDao = new CustomerDao();
-	private IProductDao productDao = new ProductDao();
 	private IOrderDao orderDao = new OrderDao();
+	private IStorageDao storageDao = new StorageDao();
 
 	@Override
 	public void signup(Customer c) {
@@ -74,7 +71,9 @@ public class CustomerServiceImpl implements CustomerService{
     	Customer c = customerDao.getCustomerById(customerId);
     	
     	for(Storage product:products) {
-			c.getCart().addItem(product);
+    		Storage tmp = storageDao.getStorage(product.getProductName());
+    		tmp.setNum(product.getNum());
+ 			c.getCart().addItem(tmp);
 		}
     	Session session = HibernateUtils.openSession();
 		Transaction ts = session.beginTransaction();
@@ -111,10 +110,6 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 
-	@Override
-	public List<Product> searchProductInStorage(Map<String, String> searchfilter) {
-		return productDao.searchProduct(searchfilter);
-	}
 
 	@Override
 	public OrderModel checkout(String customerId) {
