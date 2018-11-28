@@ -23,7 +23,6 @@ import com.ecommerceservice.model.common.AddressChecker;
 import com.ecommerceservice.model.common.OrderModel;
 import com.ecommerceservice.model.common.PaymentInfoChecker;
 import com.ecommerceservice.model.common.Product;
-import com.ecommerceservice.model.common.ProductSearchFilter;
 import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.common.StorageChecker;
 import com.ecommerceservice.model.user.Cart;
@@ -69,11 +68,7 @@ public class CustomerServiceImpl implements CustomerService{
 		// TODO Auto-generated method stub
 
 	}
-	public List<Product> searchProducts(ProductSearchFilter filter){
-		List<Product> searchResult = new ArrayList<Product>();
-		//to do search
-		return searchResult;
-	}
+	
 	@Override
 	public Cart addProduct2Cart(String customerId,List<Storage> products) {
     	Customer c = customerDao.getCustomerById(customerId);
