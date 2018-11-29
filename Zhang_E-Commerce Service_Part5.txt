@@ -1,0 +1,4 @@
+1. Name: Yuchen Zhang2. Title: E-Commerce Service3. Project Summary: This project is an e-commerce service website. At the website, admin can set discount strategy, storage admin can add and check storage, and customer can purchase products.
+4. Video Link(Jing):  
+
+                      https://screencast.com/t/auMDj3r8J0k
