@@ -6,7 +6,9 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import com.ecommerceservice.model.user.StorageAdmin;
-
+/**
+ * StorageAdmin Dao: can save storageAdmin, delete storageAdmin by id, and get storage admin by id or by name and phone.
+ */
 public class StorageAdminDao implements IStorageAdminDao{
 
 	@Override

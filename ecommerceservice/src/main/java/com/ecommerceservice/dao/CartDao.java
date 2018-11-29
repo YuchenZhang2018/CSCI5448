@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import com.ecommerceservice.model.user.Cart;
 import com.ecommerceservice.model.user.Customer;
 
+/**
+ * Cart Dao: can save, get cart
+ */
 @Component
 public class CartDao implements ICartDao{
 	public boolean saveCart(Cart cart) {

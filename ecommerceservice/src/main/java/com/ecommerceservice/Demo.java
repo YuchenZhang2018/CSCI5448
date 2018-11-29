@@ -95,8 +95,9 @@ public class Demo {
 	private static void customerDemo() {
 		
 		String customerId = "8a80804e6756b362016756b364790000";
-		System.out.println("These is our products, you can add them into your cart by the format'productName1:number productName2:number ... '");
+		
 		List<Storage> storagelist = storageSrv.showAllStorage();
+		System.out.println("These is our products, you can add them into your cart by the format'productName1:number productName2:number ... '");
 		for(Storage storage:storagelist) {
 			System.out.println("productName: "+storage.getProductName() + " price: " + storage.getPrice()+" num: "+storage.getNum());
 		}

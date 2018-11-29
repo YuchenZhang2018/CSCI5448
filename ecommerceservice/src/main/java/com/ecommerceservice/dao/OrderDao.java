@@ -10,7 +10,9 @@ import org.hibernate.Transaction;
 
 import com.ecommerceservice.model.common.OrderModel;
 import com.ecommerceservice.model.user.Customer;
-
+/**
+ * Order Dao: can save order, get order by orderId  and get orders by customerId
+ */
 public class OrderDao implements IOrderDao{
 
 	@Override

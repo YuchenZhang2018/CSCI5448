@@ -16,6 +16,9 @@ import com.ecommerceservice.model.user.PaymentInfo;
 import com.ecommerceservice.model.user.StorageAdmin;
 
 
+/**
+ * HibernateUtils: mainly used for open a session
+ */
 @SuppressWarnings("deprecation")
 public class HibernateUtils {
 

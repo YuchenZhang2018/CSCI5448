@@ -11,6 +11,9 @@ import org.hibernate.Transaction;
 
 import com.ecommerceservice.model.user.Customer;
 
+/**
+ * Customer Dao: can save, get, update and delete customer
+ */
 public class CustomerDao implements ICustomerDao{
 	
 	public boolean saveCustomer(Customer customer) {

@@ -6,7 +6,9 @@ import java.util.Map;
 
 import com.ecommerceservice.model.user.Cart;
 import com.ecommerceservice.model.user.Customer;
-
+/**
+ * Customer Dao: can save, get, update and delete customer
+ */
 public interface ICustomerDao {
 	public boolean saveCustomer(Customer customer);
 	public Customer getCustomer(Map<String,String> filterMap);

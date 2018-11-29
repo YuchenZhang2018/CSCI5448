@@ -11,7 +11,9 @@ import org.springframework.stereotype.Component;
 
 import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.user.Customer;
-
+/**
+ * Storage Dao: can add, get, delete storage
+ */
 @Component
 public class StorageDao implements IStorageDao{
 

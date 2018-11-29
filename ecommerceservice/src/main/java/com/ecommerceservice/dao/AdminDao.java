@@ -11,6 +11,9 @@ import org.hibernate.Transaction;
 import com.ecommerceservice.model.user.Admin;
 import com.ecommerceservice.model.user.Customer;
 
+/**
+ * Admin Dao: can save, delete admin, can get admin by adminId or by admin name and phone
+ */
 public class AdminDao implements IAdminDao{
 
 	@Override
