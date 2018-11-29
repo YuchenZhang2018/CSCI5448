@@ -1,5 +1,8 @@
 package com.ecommerceservice.model.product;
 
+/**
+ * concrete class extends ProductItem
+ */
 public class Toy extends ProductItem{
 
 	public Toy() {

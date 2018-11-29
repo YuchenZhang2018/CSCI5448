@@ -24,6 +24,12 @@ import com.ecommerceservice.strategy.StrategyFactory;
 import com.ecommerceservice.strategy.StrategyType;
 import com.ecommerceservice.strategy.StrategyUsed;
 
+/**
+ * Demo
+ * Storage admin can add storage
+ * admin can set discount strategy
+ * customer can add item and view cart and checkout
+ */
 public class Demo {
 	
 	

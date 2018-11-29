@@ -8,7 +8,9 @@ import com.ecommerceservice.strategy.StrategyType;
 import com.ecommerceservice.strategy.StrategyUsed;
 
 
-
+/**
+ * Administrator class, admin can set discount strategy
+ */
 public class Admin {
 	private String adminId;
 	private String name;

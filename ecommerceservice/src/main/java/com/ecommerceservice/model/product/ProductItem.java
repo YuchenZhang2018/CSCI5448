@@ -2,6 +2,10 @@ package com.ecommerceservice.model.product;
 
 import com.ecommerceservice.model.common.Storage;
 
+/**
+ * Abstract class, implements Cloneable interface,
+ * so can implement Prototype DP
+ */
 public abstract class ProductItem implements Cloneable{
 	
 	protected String productName;

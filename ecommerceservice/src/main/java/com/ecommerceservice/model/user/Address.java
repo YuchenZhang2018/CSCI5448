@@ -1,6 +1,9 @@
 package com.ecommerceservice.model.user;
 
 
+/**
+ * Address class
+ */
 public class Address {
 
 	private String addressLine;

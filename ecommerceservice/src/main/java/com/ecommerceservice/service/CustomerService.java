@@ -8,6 +8,10 @@ import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.user.Cart;
 import com.ecommerceservice.model.user.Customer;
 
+/**
+ * customer service, can signup customer, login customer, delete product from cart, add product to cart,
+ * checkout, get customer by customerid
+ */
 public interface CustomerService {
 	public void signup(Customer c);
 	public boolean login(String usrName,String email,String phone, String password);

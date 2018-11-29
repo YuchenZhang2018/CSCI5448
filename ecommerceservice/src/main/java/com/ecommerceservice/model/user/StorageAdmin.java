@@ -1,5 +1,8 @@
 package com.ecommerceservice.model.user;
 
+/**
+ * storage admin class
+ */
 public class StorageAdmin {
 	String id;
 	String name;

@@ -9,7 +9,10 @@ import com.ecommerceservice.dao.StorageDao;
 import com.ecommerceservice.model.user.Customer;
 import com.ecommerceservice.service.StorageService;
 import com.ecommerceservice.service.StorageServiceImpl;
-
+/**
+ * Concrete Observer, when customer checkout,
+ * StorageChecker will execute checkoutCheck() method, which will change customer.storageState
+ */
 public class StorageChecker extends Checker{
 	private Customer customer;
 	private ICustomerDao customerDao = new CustomerDao();

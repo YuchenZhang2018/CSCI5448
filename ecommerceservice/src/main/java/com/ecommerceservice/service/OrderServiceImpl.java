@@ -5,7 +5,9 @@ import java.util.List;
 import com.ecommerceservice.dao.IOrderDao;
 import com.ecommerceservice.dao.OrderDao;
 import com.ecommerceservice.model.common.OrderModel;
-
+/**
+ * Order service, can save order, get order by orderId, get orders by customerId
+ */
 public class OrderServiceImpl implements OrderService{
 	private IOrderDao dao = new OrderDao();
 

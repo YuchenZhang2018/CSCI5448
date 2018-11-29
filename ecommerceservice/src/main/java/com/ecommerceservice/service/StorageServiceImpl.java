@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import com.ecommerceservice.dao.IStorageDao;
 import com.ecommerceservice.dao.StorageDao;
 import com.ecommerceservice.model.common.Storage;
-
+/**
+ * storage service, can add storage, delete storage, check storage, show all storage
+ */
 @Service
 public class StorageServiceImpl implements StorageService{
 

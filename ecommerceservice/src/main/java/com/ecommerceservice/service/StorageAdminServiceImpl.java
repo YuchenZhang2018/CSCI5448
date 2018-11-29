@@ -10,6 +10,10 @@ import com.ecommerceservice.model.product.ProductCache;
 import com.ecommerceservice.model.product.ProductItem;
 import com.ecommerceservice.model.user.StorageAdmin;
 
+/**
+ * storage admin service, can signup storage admin, signin storage admin,
+ * delete storage admin by id, get storage admin by name and phone, add storage
+ */
 public class StorageAdminServiceImpl implements StorageAdminService{
 	private IStorageAdminDao dao = new StorageAdminDao();
 	private IStorageDao storageDao = new StorageDao();

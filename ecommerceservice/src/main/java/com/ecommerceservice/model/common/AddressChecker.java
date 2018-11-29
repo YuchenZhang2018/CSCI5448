@@ -5,6 +5,10 @@ import com.ecommerceservice.dao.ICustomerDao;
 import com.ecommerceservice.model.user.Address;
 import com.ecommerceservice.model.user.Customer;
 
+/**
+ * Concrete Observer, when customer checkout,
+ * AddressChecker will execute checkoutCheck() method, which will change customer.addressState
+ */
 public class AddressChecker extends Checker{
 
 	private Customer customer;

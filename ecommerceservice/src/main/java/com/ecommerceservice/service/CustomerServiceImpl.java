@@ -24,7 +24,10 @@ import com.ecommerceservice.model.common.Storage;
 import com.ecommerceservice.model.common.StorageChecker;
 import com.ecommerceservice.model.user.Cart;
 import com.ecommerceservice.model.user.Customer;
-
+/**
+ * customer service, can signup customer, login customer, delete product from cart, add product to cart,
+ * checkout, get customer by customerid
+ */
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	

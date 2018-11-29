@@ -1,5 +1,8 @@
 package com.ecommerceservice.model.user;
 
+/**
+ * PaymentInfo class
+ */
 public class PaymentInfo {
 	private String payMethod;
 	private String accountInfo;

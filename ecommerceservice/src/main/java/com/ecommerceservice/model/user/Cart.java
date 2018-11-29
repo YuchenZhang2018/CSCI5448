@@ -7,7 +7,9 @@ import com.ecommerceservice.model.common.Storage;
 
 
 
-
+/**
+ * Cart class, can get total price, add item into cart, delete item from cart, get product(storage) list
+ */
 public class Cart {
 	
 	private List<Storage> storageList;

@@ -3,6 +3,9 @@ package com.ecommerceservice.model.common;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Model of Order,property productStr is the string type of product list
+ */
 public class OrderModel {
 	private String orderID;
 	private String productStr;

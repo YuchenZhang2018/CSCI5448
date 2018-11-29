@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.ecommerceservice"},{"l":"com.ecommerceservice.controllers"},{"l":"com.ecommerceservice.dao"},{"l":"com.ecommerceservice.model.common"},{"l":"com.ecommerceservice.model.product"},{"l":"com.ecommerceservice.model.user"},{"l":"com.ecommerceservice.service"},{"l":"com.ecommerceservice.spring.config"},{"l":"com.ecommerceservice.strategy"}]

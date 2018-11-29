@@ -1,5 +1,8 @@
 package com.ecommerceservice.model.user;
 
+/**
+ * RoleModel, for SpringMVC request only
+ */
 public class RoleModel {
 	private String role;
 	private String operation;

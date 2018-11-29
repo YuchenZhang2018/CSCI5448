@@ -23,8 +23,10 @@ import com.ecommerceservice.service.StorageAdminService;
 import com.ecommerceservice.service.StorageAdminServiceImpl;
 
 
+/**
+ * web controller, can signup or signin for customr, admin, storage admin
+ */
 @Controller
-
 public class WelcomeController {
 //	@Autowired
 	private CustomerService customerService = new CustomerServiceImpl();

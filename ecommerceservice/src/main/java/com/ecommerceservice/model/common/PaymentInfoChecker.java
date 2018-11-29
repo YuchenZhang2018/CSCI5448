@@ -4,7 +4,10 @@ import com.ecommerceservice.dao.CustomerDao;
 import com.ecommerceservice.dao.ICustomerDao;
 import com.ecommerceservice.model.user.Customer;
 import com.ecommerceservice.model.user.PaymentInfo;
-
+/**
+ * Concrete Observer, when customer checkout,
+ * PaymentInfoChecker will execute checkoutCheck() method, which will change customer.paymentState
+ */
 public class PaymentInfoChecker extends Checker{
 
 	private Customer customer;

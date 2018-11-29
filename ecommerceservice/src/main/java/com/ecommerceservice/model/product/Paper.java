@@ -1,5 +1,8 @@
 package com.ecommerceservice.model.product;
 
+/**
+ * concrete class extends ProductItem
+ */
 public class Paper extends ProductItem{
 	public Paper() {
 		categary="paper";

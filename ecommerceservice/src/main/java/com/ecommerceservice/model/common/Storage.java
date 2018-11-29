@@ -2,6 +2,9 @@ package com.ecommerceservice.model.common;
 
 import java.util.UUID;
 
+/**
+ * Storage model
+ */
 public class Storage {
 	private String id;
 	private String productName;

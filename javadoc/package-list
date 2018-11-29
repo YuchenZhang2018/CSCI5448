@@ -1,0 +1,9 @@
+com.ecommerceservice
+com.ecommerceservice.controllers
+com.ecommerceservice.dao
+com.ecommerceservice.model.common
+com.ecommerceservice.model.product
+com.ecommerceservice.model.user
+com.ecommerceservice.service
+com.ecommerceservice.spring.config
+com.ecommerceservice.strategy

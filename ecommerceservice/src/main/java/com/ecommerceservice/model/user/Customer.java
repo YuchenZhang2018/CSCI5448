@@ -10,7 +10,10 @@ import com.ecommerceservice.strategy.DiscountStrategy;
 import com.ecommerceservice.strategy.StrategyUsed;
 
 
-
+/**
+ * Customer class, when it execute checkout method,
+ * it will notify all checkers to execute checkoutCheck() method
+ */
 public class Customer {
 	private String name;
 	private Address address;

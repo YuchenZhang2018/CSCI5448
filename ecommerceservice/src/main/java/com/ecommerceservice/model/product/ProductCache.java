@@ -3,6 +3,9 @@ package com.ecommerceservice.model.product;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Cache ProductItem
+ */
 public class ProductCache {
 	private static Map<String, ProductItem> prodcutMap 
     = new HashMap<String, ProductItem>();
